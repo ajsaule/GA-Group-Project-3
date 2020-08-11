@@ -8,6 +8,8 @@ function food(event) {
     retrieveData()
 }
 
+var recipeDisplay = []
+
 function retrieveData() {
     axios({
         "method":"GET",
@@ -25,17 +27,28 @@ function retrieveData() {
         })
         .then((response)=>{
             var foodResults = response.data.results
-            console.log(response)
-            // foodResults.forEach(recipe => {
-            //     if(recipe.name && recipe.description && recipe.num_servings && recipe.prep_time_minutes && recipe.total_time_minutes && recipe.original_video_url) { 
-            //         console.log(recipe.name)
-            //         console.log(recipe.description)
-            //         console.log(recipe.thumbnail_url)  
-            //         console.log(recipe.num_servings)
-            //         console.log(recipe.prep_time_minutes)
-            //         console.log(recipe.total_time_minutes)  
-            //         console.log(recipe.original_video_url)
-            //     }                
-            
-        })
+            // console.log(response)
+            foodResults.forEach(recipe => {
+                if(recipe.name && recipe.description && recipe.num_servings && recipe.original_video_url) { 
+                    recipeDisplay.push(recipe)
+                }                
+            })
+            recipeDisplay.forEach(recipe => {
+                console.log(recipe.name)
+                console.log(recipe.original_video_url)
+                console.log(recipe.description)
+                var ingredients = recipe.sections[0].components
+                ingredients.forEach(ing => {
+                    console.log(ing.raw_text)
+                })
+                var instructions = recipe.instructions
+                instructions.forEach(ins => {
+                    console.log(ins.display_text)
+                })
+                console.log(recipe.num_servings)
+            })
+        }) 
 }
+
+
+
