@@ -5,5 +5,5 @@ function resetContent() {
     activeLinks.forEach(link => {
         link.classList.remove('active')
     })
-    content.outerHTML = ''
+    content.innerHTML = ''
 }
