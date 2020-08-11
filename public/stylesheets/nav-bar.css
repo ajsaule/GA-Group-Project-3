@@ -1,0 +1,41 @@
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    background: white;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+nav
+{
+    background-color: rgba(0, 0, 0, 0.84);
+    margin: 0;
+    padding: 0;
+}
+ul 
+{
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+li 
+{
+    flex-grow: 1;
+    height: 100px;
+    list-style: none;
+    text-align: center;
+}
+li + li 
+{
+    /* margin-left: 2%; */
+}
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
