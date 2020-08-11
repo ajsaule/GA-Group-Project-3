@@ -1,8 +1,15 @@
-.stories {
+.stories
+{
     margin: 0 auto;
     background-color: lightblue;
     width: 70%;
-    height: 100vh;
+    /* height: 150px;  */
+    color: black;
+}
+
+.fa-thumbs-up:active
+{
+    color: #23EBEB;
 }
 .story-tile {
     padding: 15px;

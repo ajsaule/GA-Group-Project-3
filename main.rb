@@ -33,7 +33,6 @@ end
 get '/api/stories' do
   stories = Story.all
   json data: stories 
-  json({ message: "should we take a break?"})
 end
 
 # ===DELETE===
