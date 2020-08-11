@@ -1,8 +1,16 @@
-.stories {
+.stories
+{
     margin: 0 auto;
     background-color: lightblue;
     width: 70%;
-    height: 150px;
+    /* height: 150px;  */
+    color: black;
+}
+
+.fa-thumbs-up:active
+{
+    color: #23EBEB;
+
 }
 /* Potential sticky notes 
 /* .sticky {
