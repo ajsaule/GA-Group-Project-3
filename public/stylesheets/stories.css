@@ -2,9 +2,32 @@
     margin: 0 auto;
     background-color: lightblue;
     width: 70%;
-    height: 150px;
+    height: 100vh;
 }
-/* Potential sticky notes 
+.story-tile {
+    padding: 15px;
+    margin: 0 auto;
+    background-color: mintcream;
+    border-radius: 10px;
+    width: 95%;
+    box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
+}
+.story-tile h1 {
+    padding: 0;
+    margin: 0;
+}
+.story-tile p {
+    font-size: 1.2rem;
+}
+.story-tile-bottom {
+    display: flex;  
+    justify-content: space-between;
+}
+.story-tile button {
+    margin: 15px 10px;
+    font-size: 1.2rem;
+}
+/* Potentially leave the sticky notes as story cards ? */
 /* .sticky {
     z-index: 150;
     transform: rotate(0deg);
