@@ -16,6 +16,8 @@ function stories(event) {
     // code here
 }
 
+// if logged on statement to go here. If logged on, then they can see the displayNewStoryButton, else hide button. 
+
 function displayNewStoryButton() {
   let template = `
   <button> Post your story </button>
@@ -53,14 +55,16 @@ function createStory(story) {
   return newArticle
 }
 
+// if logged on statement to go here. If logged on, then they can delete their own story, else hide button. 
+
 // function deleteStory(e) {
 //   if (e.target.tagName === 'A') {
 //     axios
 //       .delete('/api/stories', { 
-//         data: { id: e.target.closest('section').dataset.id } 
+//         data: { id: e.target.closest('article').dataset.id } 
 //       })
 //       .then(res => {
-//         e.target.closest('section').remove()
+//         e.target.closest('article').remove()
 //       })
 //   }
 // }

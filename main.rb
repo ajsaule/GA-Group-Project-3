@@ -18,7 +18,10 @@ end
 
 post '/api/stories' do
     story = Story.new
-    story.content = json_body(request).content
+    story.title = json_body(request).title
+    story.story = json_body(request).story
+    story.name = json_body(request).name
+    story.likes = 0
     story.save
     status 201
     json(story)
