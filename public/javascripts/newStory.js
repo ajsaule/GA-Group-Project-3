@@ -14,7 +14,7 @@ function createNewStory() {
     
         <h2>Submit your story here</h2>
         
-        <form onSubmit="addStory(event)" action="" method="post">
+        <form class ="new-story" onSubmit="addStory(event)" action="" method="post">
 
             <input name="title" type="text" placeholder="Title">
 
@@ -39,5 +39,10 @@ function addStory(e) {
     var form = e.target
     var formDataObj = Object.fromEntries(new FormData(form).entries())
     console.log(formDataObj)
-
+    axios
+        .post('/api/stories', formDataObj )
+        .then(res => { 
+            form.querySelectorAll('input, textarea').forEach(tag => tag.value = '')
+            storiesTab.click() 
+        })
 }
