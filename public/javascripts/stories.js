@@ -23,6 +23,7 @@ function displayNewStoryButton() {
   let newStoryButton = document.createElement('div')
   newStoryButton.classList.add('post-story-btn')
   newStoryButton.innerHTML = template 
+  newStoryButton.addEventListener('click', newStory)
   return newStoryButton
 }
 
@@ -77,7 +78,6 @@ function fetchStories() {
 }
 
 // storiesContainer.addEventListener('click', deleteStory)
-
 
 // axios
 //     .post('/api/stories', { title: newStoryTitle.value, story: newStoryInput.value, name: newStoryName.value })
