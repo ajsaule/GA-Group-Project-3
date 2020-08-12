@@ -8,19 +8,19 @@ const storiesContainer = document.querySelector('#content')
 
 function stories(event) {
     resetContent()
-    // event target here is just the <a> tag
     let target = event.target
     target.classList.add('active')
     storiesContainer.appendChild(displayNewStoryButton())
     fetchStories()
-    // code here
-}
+} 
 
-// if logged on statement to go here. If logged on, then they can see the displayNewStoryButton, else hide button. 
+// if (logged_in?) {
+//   displayNewStoryButton()
+// }
 
 function displayNewStoryButton() {
   let template = `
-  <button> Post your story </button>
+    <button> Post your story </button>
   `
   let newStoryButton = document.createElement('div')
   newStoryButton.classList.add('post-story-btn')
@@ -29,9 +29,35 @@ function displayNewStoryButton() {
   return newStoryButton
 }
 
+function displayUpdateStoryButton() {
+  // if (user === logged_in && user === is the owner of the story) {
+    let template = `
+      <button> Update your story </button>
+    `
+    let updateStoryButton = document.createElement('div')
+    updateStoryButton.classList.add('update-story-btn')
+    updateStoryButton.innerHTML = template
+    // updateStoryButton.addEventListener('click', updateStory(event))
+    return updateStoryButton
+  // }
+}
+
+function displayDeleteStoryButton() {
+    // if (user === logged_in && user === is the owner of the story) {
+    let template = `
+      <button> Delete your story </button>
+    `
+    let deleteStoryButton = document.createElement('div')
+    deleteStoryButton.classList.add('delete-story-btn')
+    deleteStoryButton.innerHTML = template 
+    // deleteStoryButton.addEventListener('click', deleteStory(e))
+    return deleteStoryButton
+  // }
+}
+
 function createStory(story) {
   let template = `
-   <div class="story-tile"> 
+   <div> 
         <h1>
             ${story.title} 
         </h1>
@@ -51,11 +77,28 @@ function createStory(story) {
   `
   let newArticle = document.createElement('article')
   newArticle.setAttribute('data-id', story.id)
+  newArticle.classList.add('story-tile')
   newArticle.innerHTML = template
+  // if (story belongs to user) {
+    newArticle.appendChild(displayUpdateStoryButton())
+    newArticle.appendChild(displayDeleteStoryButton())
+  // }
   return newArticle
 }
 
-// if logged on statement to go here. If logged on, then they can delete their own story, else hide button. 
+// function updateStory(e) {
+//   console.log('entering update')
+//   if (e.target.tagName === 'A') {
+//     axios
+//       .patch('/api/stories', { 
+//         data: { id: e.target.closest('article').dataset.id } 
+//       })
+//       .then(res => {
+//         storiesTab.click() 
+//       })
+//   }
+// }
+
 
 // function deleteStory(e) {
 //   if (e.target.tagName === 'A') {

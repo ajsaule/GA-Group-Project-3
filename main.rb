@@ -45,7 +45,7 @@ delete '/api/stories' do
   story = Story.find(id)
   story.delete
   json({ id: id })
-  json({ message: "should we take a break?"})
+  json({ message: "delete works"})
 end
 
 # ===UPDATE===
@@ -55,7 +55,7 @@ patch '/api/stories' do
   story = Story.find(body.id)
   story.content = body.content
   story.save
-  json({ message: "should we take a break?"})
+  json({ message: "patch works"})
 end
 
 
