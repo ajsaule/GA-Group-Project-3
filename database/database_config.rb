@@ -6,7 +6,7 @@ settings = {
     database: 'covid_app'
 }
 
-ActiveRecord::Base.establish_connection(settings)
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || settings)
 
 class Story < ActiveRecord::Base
 
