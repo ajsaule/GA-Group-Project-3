@@ -22,7 +22,7 @@ post '/api/stories' do
     story.save
     status 201
     json(story)
-  end  
+end  
 
 # ===READ===
 

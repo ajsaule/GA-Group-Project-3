@@ -11,25 +11,39 @@ function stories(event) {
     // event target here is just the <a> tag
     let target = event.target
     target.classList.add('active')
+    storiesContainer.appendChild(displayNewStoryButton())
     fetchStories()
     // code here
 }
 
+function displayNewStoryButton() {
+  let template = `
+  <button> Post your story </button>
+  `
+  let newStoryButton = document.createElement('div')
+  newStoryButton.classList.add('post-story-btn')
+  newStoryButton.innerHTML = template 
+  return newStoryButton
+}
+
 function createStory(story) {
   let template = `
-   <div class="stories"> 
-        <p>
+   <div class="story-tile"> 
+        <h1>
             ${story.title} 
-        </p>
+        </h1>
         <p>
             ${story.story} 
         </p>
-        <p>
-            ${story.name} 
-        </p>
-        <p>
-        <i class="far fa-thumbs-up"></i><a href="">${story.likes}</a>
-        </p>
+        <div class="story-tile-bottom">
+          <p>
+              ${story.name} 
+          </p>
+          <div>
+            <i class="far fa-thumbs-up"></i>
+            <a href="#">${story.likes}</a>
+          </div>
+        </div>
     </div>
   `
   let newArticle = document.createElement('article')
