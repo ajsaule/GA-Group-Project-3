@@ -8,6 +8,4 @@ settings = {
 
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || settings)
 
-class Story < ActiveRecord::Base
 
-end
