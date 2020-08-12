@@ -1,15 +1,13 @@
-// const content = document.querySelector('#content')
-
 function food(event) {
     resetContent()
     // event target here is just the <a> tag
     let target = event.target
     target.classList.add('active')
     // code here
-    console.log('food')
     retrieveData()
 }
 
+var newFood = document.createElement('button')
 
 function retrieveData() {
     axios({
@@ -22,8 +20,8 @@ function retrieveData() {
             "useQueryString":true
         },"params":{
             "tags":"comfort_food",
-            "from": "1",
-            "sizes": "2"
+            "from": Math.floor(Math.random()*1680),
+            "size": 10
         }
     })
     .then((response)=>{
@@ -32,35 +30,48 @@ function retrieveData() {
         var foodResults = response.data.results
         console.log(foodResults)
         let foodDiv = document.createElement('div')
+        foodDiv.classList.add('foodDiv')
+        newFood.innerHTML = 'Random Search'
+        content.appendChild(newFood)
         content.appendChild(foodDiv)
         foodResults.forEach(recipe => {
-            if(recipe.name && recipe.description && recipe.num_servings && recipe.original_video_url) { 
+            if(recipe.name && recipe.num_servings && recipe.original_video_url) { 
                 recipeDisplay.push(recipe)
+            }
+            if(!recipe.description) {
+                recipe.description = ""
             }                
         })
         recipeDisplay.forEach((recipe, index) => {
             var ingredients = recipe.sections[0].components
             var instructions = recipe.instructions
-            console.log(instructions)
             let nameTemplate = `
                 <section>
-                    <h3>${recipe.name}</h3> 
-                    <video width="320" height="240" controls>
+                    <h4>${recipe.name}</h3> 
+                    <video width="480" height="360" controls>
                     <source src="${recipe.original_video_url}">
                     </video>
-                        <p>${recipe.description}</p>
+                    <p>${recipe.description}</p>
+                    <p>Number of Servings: ${recipe.num_servings}</p>
+                    <p>List of Ingredients</p>
                     <ul class="recipe-list">
                         ${ingredients.map(ing => `<li>${ing.raw_text}</li>`).join('') }    
                     </ul>
+                    <p>Instructions</p>
                     <ol class="description-list">
-                    ${instructions.map(ins => `<li>${ins.display_text}</li>`).join('') } 
+                        ${instructions.map(ins => `<li>${ins.display_text}</li>`).join('') } 
                     </ol>
-                    <p>${recipe.num_servings}</p>
-                </section>`
+                </section>
+                `
             recipes += nameTemplate
         })
     foodDiv.innerHTML = recipes
     }) 
 }
 
+function randomSearch() {
+    resetContent()
+    retrieveData()
+}
 
+newFood.addEventListener('click', randomSearch)
