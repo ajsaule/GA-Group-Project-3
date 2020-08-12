@@ -1,11 +1,3 @@
-.stories
-{
-    margin: 0 auto;
-    background-color: lightblue;
-    width: 70%;
-    /* height: 150px;  */
-    color: black;
-}
 
 .fa-thumbs-up:active
 {
@@ -13,8 +5,9 @@
 }
 .story-tile {
     padding: 15px;
-    margin: 0 auto;
-    background-color: mintcream;
+    margin: 15px auto;
+    /* background-color: mintcream; */
+    background: linear-gradient(50deg,#ff2db6, #fbf027);
     border-radius: 10px;
     width: 95%;
     box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
@@ -30,30 +23,3 @@
     display: flex;  
     justify-content: space-between;
 }
-.story-tile button {
-    margin: 15px 10px;
-    font-size: 1.2rem;
-}
-/* Potentially leave the sticky notes as story cards ? */
-/* .sticky {
-    z-index: 150;
-    transform: rotate(0deg);
-    width: 200px;
-    min-height: 150px;
-    margin: -10px 10px 10px;
-    padding: 10px;
-    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive;
-    font-size: 14px;
-    color: #000;
-    background: rgba(255, 255, 51, 0.8);
-    box-shadow: -2px 2px 2px rgba(0,0,0,0.3);
-  }
-.sticky:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 0;
-    right: 0;
-} */
