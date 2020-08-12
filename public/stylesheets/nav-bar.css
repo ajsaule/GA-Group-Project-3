@@ -9,20 +9,20 @@ body
     margin: 0;
     padding: 0;
 }
-nav
+.desktop
 {
     background-color: rgba(0, 0, 0, 0.84);
     margin: 0;
     padding: 0;
 }
-ul 
+.desktop ul 
 {
     margin: 0 auto;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
 }
-li 
+.desktop li 
 {
     flex-grow: 1;
     height: 100px;
@@ -33,7 +33,7 @@ li + li
 {
     /* margin-left: 2%; */
 }
-a
+.desktop a
 {
     text-decoration: none;
     color: white;
@@ -41,4 +41,160 @@ a
 .active
 {
     color: #23EBEB;
+}
+.mobile-tablet 
+{
+    display: none;
+}
+.hamburger-menu
+{
+    display: none;
+}
+
+/* ===- Hamburger Menu -=== */
+/* have to create a new class called `is-active` when the icon has been clicked */ 
+
+.hamburger 
+{
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+}
+.hamburger:hover 
+{
+    opacity: 0.7; 
+}
+.hamburger.is-active:hover 
+{
+    opacity: 0.7; 
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after 
+{
+    background-color: #000; 
+}
+
+.hamburger-box 
+{
+width: 40px;
+height: 24px;
+display: inline-block;
+position: relative; 
+}
+
+.hamburger-inner 
+{
+display: block;
+top: 50%;
+margin-top: -2px; 
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+{
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; 
+}
+.hamburger-inner::before, .hamburger-inner::after 
+{
+    content: "";
+    display: block; 
+}
+.hamburger-inner::before 
+{
+    top: -10px; 
+}
+.hamburger-inner::after 
+{
+    bottom: -10px; 
+}
+
+.hamburger--squeeze .hamburger-inner 
+{
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+.hamburger--squeeze .hamburger-inner::before 
+{
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; 
+}
+.hamburger--squeeze .hamburger-inner::after 
+{
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+
+.hamburger--squeeze.is-active .hamburger-inner 
+{
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::before 
+{
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; 
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::after 
+{
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+
+
+@media screen and (max-width: 670px) {
+        .desktop 
+        {
+            display: none;
+        }
+        .mobile-tablet 
+        {
+            display: block;
+        }
+
+        .mobile-tablet
+        {
+            padding-top: 10px;
+            height: 100vh;
+            width: 50%;
+            border-radius: 0 10px 0 0;
+            background-color: orange;
+        }
+        .hamburger 
+        {
+            position: absolute;
+            right:0
+        }
+        .hamburger-menu
+        {
+            height: 70px;
+            position: relative;
+            background-color: #fbf027;
+            display: block;
+        }
+}
+
+@media screen and (max-width: 400px) {
+    .mobile-tablet 
+    {
+        width: 200px;
+    }
 }

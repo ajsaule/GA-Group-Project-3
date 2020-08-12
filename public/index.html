@@ -13,7 +13,23 @@
     <link rel="stylesheet" href="stylesheets/about.css">
 </head>
 <body>
-    <nav>
+    <nav class="desktop">
+        <ul>
+            <li><a id="stories" href="#">Stories</a></li>
+            <li><a id="innovation" href="#">Innovation</a></li>
+            <li><a id="food" href="#">Food</a></li>
+            <li><a id="home" href="#">Home</a></li>
+            <li><a id="about" href="#">About</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger-menu">
+        <button class="hamburger hamburger--squeeze" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+    </div>
+    <nav class="mobile-tablet">
         <ul>
             <li><a id="stories" href="#">Stories</a></li>
             <li><a id="innovation" href="#">Innovation</a></li>
@@ -25,6 +41,7 @@
     <div id="content">
         <!-- <div class="food"></div> -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="javascripts/utility-functions.js"></script>
     <script src="javascripts/newStory.js"></script>
