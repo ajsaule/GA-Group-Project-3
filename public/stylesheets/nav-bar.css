@@ -105,18 +105,18 @@ a
     color: black;
     font-weight: bold;
 }
-.mobile-tablet 
-{
-    display: none;
-}
-.hamburger-menu
-{
-    display: none;
-}
+
 
 @media screen and (max-width: 1195px) {
     .wrapper
     {
         width: 95%;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    .nav-button 
+    {
+        padding: 15px 0px;
     }
 }

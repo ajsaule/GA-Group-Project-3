@@ -69,7 +69,7 @@ function createStory(story) {
               ${story.name} 
           </p>
           <div>
-            <i class="far fa-thumbs-up"></i>
+            <i class="fas fa-thumbs-up"></i>
             <a href="#">${story.likes}</a>
           </div>
         </div>
