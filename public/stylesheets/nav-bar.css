@@ -1,46 +1,109 @@
 *
 {
     box-sizing: border-box;
+    font-family: 'Wire One', sans-serif;
 }
 body
 {
-    background: white;
+    background: linear-gradient(50deg,#ff2db6, #fbf027);
+    background-size: cover;
+    background-position-x: center;
+    height: 100vh;
     font-size: 2rem;
     margin: 0;
     padding: 0;
 }
-.desktop
+.fa-home
 {
-    background-color: rgba(0, 0, 0, 0.84);
-    margin: 0;
-    padding: 0;
+    font-size: 1.4rem;
+    position: fixed;
+    top: .2em;
+    left: .2em;
+    color: rgba(0, 0, 0, 0.464);
 }
-.desktop ul 
+.banner
+{
+    border: 6px solid white;
+    width: 89%;
+    margin: 1em auto;
+}
+.wrapper 
+{
+    margin: 0 auto;
+    width: 1200px;
+}
+h1
+{
+    text-align: left;
+    font-size: 2rem;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    margin: 2rem 2rem 0 2rem;
+    padding-top: .5em;
+    font-family: 'Advent Pro', sans-serif;
+    color: white;
+    /* text-shadow: 1px 1px 1px black; */
+}
+.split-h1
+{
+    display: block;
+    font-family: 'Advent Pro', sans-serif;
+}
+h2
+{
+    text-align: left;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    margin: 0 2rem;
+    padding: .5em 0 1.5em 0;
+    color: white;
+    /* text-shadow: 0 0 1px rgb(0, 0, 0); */
+    font-size: 2rem;
+    font-style: italic;
+}
+nav
+{
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.888);
+    border-top: 10px solid yellow;;
+    /* margin: 0 2rem 2rem 2rem; */
+    padding: .6em 0 0 0;
+    width: 89%
+}
+ul 
 {
     margin: 0 auto;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    max-width: 80%;
 }
-.desktop li 
+li 
 {
     flex-grow: 1;
     height: 100px;
     list-style: none;
     text-align: center;
+    align-items: center;
+    padding: 0 .2em .5em .5em;
+    height: 100%;
 }
-li + li 
-{
-    /* margin-left: 2%; */
-}
-.desktop a
+a
 {
     text-decoration: none;
-    color: white;
+    color: rgba(0, 0, 0, 0.464);
+    padding: 10px 20px;
+}
+a:focus {
+    border-radius: 2px;
+    background: #e5e5e5;
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+        -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 .active
 {
-    color: #23EBEB;
+    color: black;
+    font-weight: bold;
 }
 .mobile-tablet 
 {
@@ -51,150 +114,9 @@ li + li
     display: none;
 }
 
-/* ===- Hamburger Menu -=== */
-/* have to create a new class called `is-active` when the icon has been clicked */ 
-
-.hamburger 
-{
-    padding: 15px 15px;
-    display: inline-block;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible; 
-}
-.hamburger:hover 
-{
-    opacity: 0.7; 
-}
-.hamburger.is-active:hover 
-{
-    opacity: 0.7; 
-}
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after 
-{
-    background-color: #000; 
-}
-
-.hamburger-box 
-{
-width: 40px;
-height: 24px;
-display: inline-block;
-position: relative; 
-}
-
-.hamburger-inner 
-{
-display: block;
-top: 50%;
-margin-top: -2px; 
-}
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
-{
-    width: 40px;
-    height: 4px;
-    background-color: #000;
-    border-radius: 4px;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease; 
-}
-.hamburger-inner::before, .hamburger-inner::after 
-{
-    content: "";
-    display: block; 
-}
-.hamburger-inner::before 
-{
-    top: -10px; 
-}
-.hamburger-inner::after 
-{
-    bottom: -10px; 
-}
-
-.hamburger--squeeze .hamburger-inner 
-{
-    transition-duration: 0.075s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
-}
-.hamburger--squeeze .hamburger-inner::before 
-{
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease; 
-}
-.hamburger--squeeze .hamburger-inner::after 
-{
-    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
-}
-
-.hamburger--squeeze.is-active .hamburger-inner 
-{
-    transform: rotate(45deg);
-    transition-delay: 0.12s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
-}
-
-.hamburger--squeeze.is-active .hamburger-inner::before 
-{
-    top: 0;
-    opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease; 
-}
-
-.hamburger--squeeze.is-active .hamburger-inner::after 
-{
-    bottom: 0;
-    transform: rotate(-90deg);
-    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
-}
-
-
-@media screen and (max-width: 670px) {
-        .desktop 
-        {
-            display: none;
-        }
-        .mobile-tablet 
-        {
-            display: block;
-        }
-
-        .mobile-tablet
-        {
-            padding-top: 10px;
-            height: 100vh;
-            width: 50%;
-            border-radius: 0 10px 0 0;
-            background-color: orange;
-        }
-        .hamburger 
-        {
-            position: absolute;
-            right:0
-        }
-        .hamburger-menu
-        {
-            height: 70px;
-            position: relative;
-            background-color: #fbf027;
-            display: block;
-        }
-}
-
-@media screen and (max-width: 400px) {
-    .mobile-tablet 
+@media screen and (max-width: 1195px) {
+    .wrapper
     {
-        width: 200px;
+        width: 95%;
     }
 }

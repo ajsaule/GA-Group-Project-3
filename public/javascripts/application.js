@@ -1,5 +1,4 @@
 // ===DOM VARIABLES===
-
 const storiesTab = document.getElementById('stories');
 const innovationTab = document.getElementById('innovation');
 const foodTab = document.getElementById('food');
@@ -9,7 +8,6 @@ const login = document.querySelector('.login');
 const logout = document.querySelector('.logout');
 
 // ===EVENT HANDLERS===
-
 storiesTab.addEventListener('click', stories);
 innovationTab.addEventListener('click', innovation);
 foodTab.addEventListener('click', food);
