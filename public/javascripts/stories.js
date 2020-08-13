@@ -10,29 +10,31 @@ function stories(event) {
     resetContent()
     let target = event.target
     target.classList.add('active')
-    storiesContainer.appendChild(displayNewStoryButton())
+    displayNewStoryButton()
     fetchStories()
+
 } 
 
-// if (logged_in?) {
-//   displayNewStoryButton()
-// }
-
 function displayNewStoryButton() {
-  let template = `
-    <button> Post your story </button>
-  `
-  let newStoryButton = document.createElement('div')
-  newStoryButton.classList.add('post-story-btn')
-  newStoryButton.innerHTML = template 
-  newStoryButton.addEventListener('click', newStory)
-  return newStoryButton
+  axios
+    .get('/session')
+    .then(res => {
+      if (res.data.message === "logged in") {
+          let template = `
+            <button> Post your story </button>
+            `
+          let newStoryButton = document.createElement('div')
+          newStoryButton.classList.add('post-story-btn')
+          newStoryButton.innerHTML = template 
+          newStoryButton.addEventListener('click', newStory)
+          storiesContainer.appendChild(newStoryButton)
+      }
+    })
 }
 
-function displayUpdateStoryButton() {
-  // if (user === logged_in && user === is the owner of the story) {
+function displayUpdateStoryButton(userid) {
     let template = `
-      <button> Update your story </button>
+      <button onClick="updateStory(event, ${userid})"> Update your story </button>
     `
     let updateStoryButton = document.createElement('div')
     updateStoryButton.classList.add('update-story-btn')
@@ -42,10 +44,9 @@ function displayUpdateStoryButton() {
   // }
 }
 
-function displayDeleteStoryButton() {
-    // if (user === logged_in && user === is the owner of the story) {
+function displayDeleteStoryButton(userid) {
     let template = `
-      <button> Delete your story </button>
+      <button onClick="deleteStory(event, ${userid})"> Delete your story </button>
     `
     let deleteStoryButton = document.createElement('div')
     deleteStoryButton.classList.add('delete-story-btn')
@@ -79,38 +80,17 @@ function createStory(story) {
   newArticle.setAttribute('data-id', story.id)
   newArticle.classList.add('story-tile')
   newArticle.innerHTML = template
-  // if (story belongs to user) {
-    newArticle.appendChild(displayUpdateStoryButton())
-    newArticle.appendChild(displayDeleteStoryButton())
-  // }
+  axios
+    .get('/api/stories/story')
+    .then(res => {
+      if (story.userid === res.data.id ) {
+        newArticle.appendChild(displayUpdateStoryButton(story.id))
+        newArticle.appendChild(displayDeleteStoryButton(story.id))
+    }
+  })
   return newArticle
 }
 
-// function updateStory(e) {
-//   console.log('entering update')
-//   if (e.target.tagName === 'A') {
-//     axios
-//       .patch('/api/stories', { 
-//         data: { id: e.target.closest('article').dataset.id } 
-//       })
-//       .then(res => {
-//         storiesTab.click() 
-//       })
-//   }
-// }
-
-
-// function deleteStory(e) {
-//   if (e.target.tagName === 'A') {
-//     axios
-//       .delete('/api/stories', { 
-//         data: { id: e.target.closest('article').dataset.id } 
-//       })
-//       .then(res => {
-//         e.target.closest('article').remove()
-//       })
-//   }
-// }
 
 function renderStories(res) {
   let stories = res.data.data

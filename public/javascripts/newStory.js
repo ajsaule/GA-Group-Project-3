@@ -38,7 +38,7 @@ function addStory(e) {
     e.preventDefault()
     var form = e.target
     var formDataObj = Object.fromEntries(new FormData(form).entries())
-    console.log(formDataObj)
+
     axios
         .post('/api/stories', formDataObj )
         .then(res => { 

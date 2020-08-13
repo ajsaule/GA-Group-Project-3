@@ -7,7 +7,8 @@ CREATE TABLE stories (
     title TEXT,
     story VARCHAR(1000),
     name TEXT,
-    likes INTEGER
+    likes INTEGER,
+    userid INTEGER
 );
 
 CREATE TABLE users (

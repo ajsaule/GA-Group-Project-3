@@ -56,11 +56,13 @@ function userCreated() {
     let template = `
         <div class="login-signup">
             <h3>You have successfully signed up.</h3>
-            <a onClick="logIn(event)" href="#">Login</a>
             <a onClick="home(event)" href="#">Home</a>
         </div> 
     `
     let newArticle = document.createElement('article')
     newArticle.innerHTML = template
+    loggedIn.innerHTML = ''
+    loggingout.innerHTML = 'Log out'
+    signedUp.innerHTML = ''
     return newArticle
 }
