@@ -1,6 +1,6 @@
 CREATE DATABASE covid_app;
 
-\c covid_app
+-- \c covid_app
 
 CREATE TABLE stories (
     id SERIAL PRIMARY KEY,
@@ -8,4 +8,10 @@ CREATE TABLE stories (
     story VARCHAR(1000),
     name TEXT,
     likes INTEGER
+);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email TEXT,
+    password_digest TEXT
 );
