@@ -45,25 +45,25 @@ function retrieveData() {
         recipeDisplay.forEach((recipe, index) => {
             var ingredients = recipe.sections[0].components
             var instructions = recipe.instructions
-            let nameTemplate = `
-                <section>
+            let template = `
+                <section class="food-tile">
                     <h4>${recipe.name}</h3> 
                     <video width="480" height="360" controls>
-                    <source src="${recipe.original_video_url}">
+                        <source src="${recipe.original_video_url}">
                     </video>
                     <p>${recipe.description}</p>
-                    <p>Number of Servings: ${recipe.num_servings}</p>
-                    <p>List of Ingredients</p>
+                    <p class="bold">Number of Servings: ${recipe.num_servings}</p>
+                    <p class="bold">List of Ingredients</p>
                     <ul class="recipe-list">
                         ${ingredients.map(ing => `<li>${ing.raw_text}</li>`).join('') }    
                     </ul>
-                    <p>Instructions</p>
+                    <p class="bold">Instructions</p>
                     <ol class="description-list">
                         ${instructions.map(ins => `<li>${ins.display_text}</li>`).join('') } 
                     </ol>
                 </section>
                 `
-            recipes += nameTemplate
+            recipes += template
         })
     foodDiv.innerHTML = recipes
     }) 
