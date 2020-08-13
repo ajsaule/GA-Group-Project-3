@@ -6,20 +6,35 @@
 .story-tile {
     padding: 15px;
     margin: 15px auto;
-    /* background-color: mintcream; */
-    background: linear-gradient(50deg,#ff2db6, #fbf027);
-    border-radius: 10px;
-    width: 95%;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+    width: 89%;
     box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
 }
 .story-tile h1 {
+    color: black;
     padding: 0;
     margin: 0;
 }
 .story-tile p {
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }
 .story-tile-bottom {
     display: flex;  
     justify-content: space-between;
+}
+.update-story-btn {
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+}
+.delete-story-btn {
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+}
+.post-story-btn {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 50%;
+    width: 50%;
+    height: 25px;
 }

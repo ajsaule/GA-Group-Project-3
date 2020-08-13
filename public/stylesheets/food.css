@@ -4,12 +4,12 @@ body {
 .food-tile {
     padding: 15px;
     margin: 15px auto;
-    background-color: mintcream;
+    background-color: rgba(255, 255, 255, 0.75);
     /* background: linear-gradient(50deg,#ff2db6, #fbf027); */
-    border-radius: 10px;
+    border-radius: 2px;
     width: 95%;
     box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
-    width: 95%;
+    width: 89%;
     max-width: 750px;
 }
 .food-tile h4 {
@@ -19,9 +19,14 @@ body {
 }
 .food-tile p {
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }
 .food-tile ul, ol {
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.food-tile li {
+    font-family: 'Roboto', sans-serif;
 }
 .bold {
     font-weight: bolder;
