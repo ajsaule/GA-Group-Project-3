@@ -54,7 +54,7 @@ function retrieveData() {
             var instructions = recipe.instructions
             let template = `
                 <section class="food-tile">
-                    <h4>${recipe.name}</h3> 
+                    <h3>${recipe.name}</h3> 
                     <video width="480" height="360" controls>
                         <source src="${recipe.original_video_url}">
                     </video>

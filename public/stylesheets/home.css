@@ -1,24 +1,3 @@
-.signup
-{
-    font-size: 1.4rem;
-    position: fixed;
-    top: .2em;
-    right: .2em;
-}
-.login
-{
-    font-size: 1.4rem;
-    position: fixed;
-    top: .2em;
-    right: 3em;
-}
-.logout
-{
-    font-size: 1.4rem;
-    position: fixed;
-    top: .2em;
-    right: .2em;
-}
 #content {
     margin: 0 auto;
 }

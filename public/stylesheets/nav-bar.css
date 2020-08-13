@@ -3,29 +3,61 @@
     box-sizing: border-box;
     font-family: 'Wire One', sans-serif;
 }
+html, body
+{
+    height: 100%;
+}
 body
 {
-    background: linear-gradient(50deg,#ff2db6, #fbf027);
-    background-size: cover;
-    background-position-x: center;
-    height: 100vh;
     font-size: 2rem;
     margin: 0;
     padding: 0;
 }
-.fa-home
+.menu
+{
+    background-color: rgba(255, 255, 255, 0.84);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+.menu-options
 {
     font-size: 1.4rem;
     position: fixed;
-    top: .2em;
-    left: .2em;
     color: rgba(0, 0, 0, 0.464);
+    z-index: 2;
+}
+.fa-home
+{
+    font-size: .7em;
+    top: .4em;
+    left: .4em;
+}
+.signup
+{
+    top: .2em;
+    right: .2em;
+}
+.login
+{
+    top: .2em;
+    right: 3em;
+}
+.logout
+{
+    top: .2em;
+    right: .2em;
 }
 .banner
 {
-    border: 6px solid white;
+    background-image: url("https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80");
+    background-size: 100%;
+    background-position: center;
+    /* border: 6px solid white; */
     width: 89%;
-    margin: 1em auto;
+    margin: 1.7em auto 1em auto;
 }
 .wrapper 
 {
@@ -35,12 +67,13 @@ body
 h1
 {
     text-align: left;
-    font-size: 2rem;
+    font-size: 5rem;
     /* background-color: rgba(255, 255, 255, 0.6); */
     margin: 2rem 2rem 0 2rem;
-    padding-top: .5em;
+    padding: .5em 0 1em 0;
     font-family: 'Advent Pro', sans-serif;
     color: white;
+    position: relative;
     /* text-shadow: 1px 1px 1px black; */
 }
 .split-h1
@@ -48,13 +81,15 @@ h1
     display: block;
     font-family: 'Advent Pro', sans-serif;
 }
-h2
+.motto
 {
+    position: absolute;
     text-align: left;
-    /* background-color: rgba(255, 255, 255, 0.6); */
+    background-color: rgb(0, 0, 0);
     margin: 0 2rem;
-    padding: .5em 0 1.5em 0;
+    padding: 0 .4em;
     color: white;
+    top: 12em;
     /* text-shadow: 0 0 1px rgb(0, 0, 0); */
     font-size: 2rem;
     font-style: italic;
@@ -62,8 +97,8 @@ h2
 nav
 {
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.888);
-    border-top: 10px solid yellow;;
+    background-color: rgba(0, 0, 0, 0.902);
+    /* border-top: 10px solid yellow;; */
     /* margin: 0 2rem 2rem 2rem; */
     padding: .6em 0 0 0;
     width: 89%
@@ -83,26 +118,31 @@ li
     list-style: none;
     text-align: center;
     align-items: center;
-    padding: 0 .2em .5em .5em;
+    padding: 0 .5em .5em .5em;
     height: 100%;
 }
 a
 {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.464);
+    color: rgba(23, 23, 23, 0.854);
+}
+.nav-button
+{
+    color: rgb(213, 240, 241);
     padding: 10px 20px;
 }
 .nav-button:focus {
-    border-radius: 2px;
+    border-radius: 1px;
     background: #e5e5e5;
+    color: black;
     outline: none;
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-        -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-            box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 .active
 {
-    color: black;
+    color: rgb(28, 208, 214);
     font-weight: bold;
 }
 
