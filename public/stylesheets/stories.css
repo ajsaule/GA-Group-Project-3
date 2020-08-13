@@ -26,15 +26,27 @@
 }
 .update-story-btn {
     display: inline;
+}
+.update-story-btn button {
+    border: none;
     font-family: 'Roboto', sans-serif;
 }
 .delete-story-btn {
     display: inline;
+}
+.delete-story-btn button {
+    border: none;
     font-family: 'Roboto', sans-serif;
 }
 .post-story-btn {
+    margin: 15px auto;
+    width: 89%;
+}
+.post-story-btn button {
+    background-color: #fff9fd;
+    border-radius: 2px;
+    border: none;
     font-family: 'Roboto', sans-serif;
-    margin-left: 50%;
-    width: 50%;
+    width: 89%;
     height: 25px;
 }

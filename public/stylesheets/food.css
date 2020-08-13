@@ -31,6 +31,19 @@ body {
 .bold {
     font-weight: bolder;
 }
+.random-recipe-button {
+    margin: 15px auto;
+
+}
+.random-recipe-button button {
+    margin: 15px auto;
+    background-color: #fff9fd;
+    border-radius: 2px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    width: 89%;
+    height: 25px;
+}
 video {
     display: block;
     margin: 0 auto;
