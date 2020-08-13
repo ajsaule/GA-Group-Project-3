@@ -58,7 +58,7 @@ function displayDeleteStoryButton(userid) {
 
 function createStory(story) {
   let template = `
-   <div> 
+   <div class="stories-div"> 
         <h1>
             ${story.title} 
         </h1>

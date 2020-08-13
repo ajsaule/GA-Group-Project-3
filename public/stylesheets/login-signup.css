@@ -1,8 +1,40 @@
 .login-signup
 {
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.forms
+{
+    display: block;
+    margin: 1em auto;
+    width: 500px;
+    padding: .2em;
+    text-align: center;
+    outline: none;
+    font-size: 1.3em;
+}
+.forms:focus
+{
+    background-color: rgba(0, 0, 0, 0.82);
+    color: white;
+    border: white;
+}
+.login-btn
+{
+    margin-bottom: 3rem;
+    font-size: .7em;
+    padding: .2em;
 }
 .required
 {
     color: red;
+}
+.delete-account
+{
+    color: red;
+}
+.fa-trash-alt
+{
+    font-size: .8em;
 }

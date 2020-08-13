@@ -16,10 +16,10 @@ function loginForm() {
             <h3>Log in</h3>
             <form onSubmit="session(event)" class="form-styling" action="" method="post">
                 <label for="">email</label>
-                <input name="email" type="text" placeholder="Email" autocomplete="off">
+                <input class="forms" name="email" type="text" placeholder="Email" autocomplete="off">
                 <label for="">password</label>
-                <input name="password" type="password" placeholder="Password" autocomplete="off">
-                <button class="marble">Login</button>
+                <input class="forms" name="password" type="password" placeholder="Password" autocomplete="off">
+                <button class="login-btn">Login</button>
             </form>
         </div>
     `
@@ -44,8 +44,8 @@ function confirmLogin(userId) {
     let template = `
         <div class="login-signup">
             <h3>You have successfully logged in.</h3>
-            <a onClick="home(event)" href="#">Home</a>
-            <a onClick="deleteAccount(event)" class="delete-account" href="#" data-id="${userId}">DELETE ACCOUNT</a>
+            <a class="forms" onClick="home(event)" href="#">Home</a>
+            <a class="forms delete-account" onClick="deleteAccount(event)" href="#" data-id="${userId}"><i class="fas fa-trash-alt"></i> DELETE ACCOUNT</a>
         </div>
     `
     let newArticle = document.createElement('article')

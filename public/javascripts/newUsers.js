@@ -13,10 +13,10 @@ function createNewUser() {
             <h3>Sign Up</h3>
             <form onSubmit="addUser(event)" class="form-styling" action="" method="post">
                 <label for="">Email<span class="required">*</span></label>
-                <input name="email" type="text" placeholder="Email" autocomplete="off">
+                <input class="forms" name="email" type="text" placeholder="Email" autocomplete="off">
                 <label for="">Password<span class="required">*</span></label>
-                <input name="password" type="password" placeholder="Password" autocomplete="off">
-                <button class="marble">Sign up</button>
+                <input class="forms" name="password" type="password" placeholder="Password" autocomplete="off">
+                <button class="login-btn">Sign up</button>
                 <p class="email-registered required">* Required fields</p>
             </form>
         </div>

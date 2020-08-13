@@ -1,50 +1,65 @@
-body {
-    background: linear-gradient(50deg,#ff2db6, #fbf027);
+.food-background
+{
+    background-image: url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
 }
 .food-tile {
-    padding: 15px;
+    padding: 1em 3em;
     margin: 15px auto;
     background-color: rgba(255, 255, 255, 0.75);
     /* background: linear-gradient(50deg,#ff2db6, #fbf027); */
-    border-radius: 2px;
-    width: 95%;
+    border-radius: 1px;
     box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
     width: 89%;
     max-width: 750px;
-}
-.food-tile h4 {
-    margin: 10px auto;
     text-align: center;
-    padding: 10px 15px;
+}
+.food-tile h3 {
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2em 3em;
 }
 .food-tile p {
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
+    color: rgb(9, 121, 125);
+    padding-bottom: .5em;
 }
 .food-tile ul, ol {
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
+    padding: 1em 0;
 }
 .food-tile li {
     font-family: 'Roboto', sans-serif;
 }
 .bold {
-    font-weight: bolder;
+    font-size: 1.4em;
 }
 .random-recipe-button {
-    margin: 15px auto;
-
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 .random-recipe-button button {
-    margin: 15px auto;
-    background-color: #fff9fd;
-    border-radius: 2px;
+    /* background-color: #fef8fc; */
+    background-color: rgba(0, 0, 0, 0.635);
+    border-radius: 1px;
+    color: white;
     border: none;
     font-family: 'Roboto', sans-serif;
     width: 89%;
-    height: 25px;
+    height: 50px;
+    margin-top: 20px;
+}
+.random-recipe-button button:active {
+    background-color: rgba(255, 255, 255, 0.635);
+    color: rgba(0, 0, 0, 0.635);
+}
+button
+{
+    outline: none;
 }
 video {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
 }
