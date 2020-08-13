@@ -7,7 +7,15 @@ function food(event) {
     retrieveData()
 }
 
+// creating randomise button 
+var randomDiv = document.createElement('div')
+randomDiv.classList.add('random-recipe-button')
 var newFood = document.createElement('button')
+newFood.textContent = 'Random Search'
+newFood.addEventListener('click', randomSearch)
+randomDiv.appendChild(newFood)
+// content.appendChild(randomButton)
+// newFood.innerHTML = 'Random Search'
 
 function retrieveData() {
     axios({
@@ -31,8 +39,7 @@ function retrieveData() {
         console.log(foodResults)
         let foodDiv = document.createElement('div')
         foodDiv.classList.add('foodDiv')
-        newFood.innerHTML = 'Random Search'
-        content.appendChild(newFood)
+        content.appendChild(randomDiv)
         content.appendChild(foodDiv)
         foodResults.forEach(recipe => {
             if(recipe.name && recipe.num_servings && recipe.original_video_url) { 
@@ -73,5 +80,3 @@ function randomSearch() {
     resetContent()
     retrieveData()
 }
-
-newFood.addEventListener('click', randomSearch)
