@@ -92,7 +92,7 @@ a
     color: rgba(0, 0, 0, 0.464);
     padding: 10px 20px;
 }
-a:focus {
+.nav-button:focus {
     border-radius: 2px;
     background: #e5e5e5;
     outline: none;
