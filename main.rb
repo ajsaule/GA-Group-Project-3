@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sinatra/json'
 require_relative 'database/database_config'
-require_relative 'database/stories'
+require_relative 'models/story'
 
 # ===BODY PARSER===
 
