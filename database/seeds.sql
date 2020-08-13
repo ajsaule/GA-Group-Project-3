@@ -28,3 +28,7 @@ INSERT INTO stories (title, story, name, likes) values ('Husband Supports Wife T
 INSERT INTO stories (title, story, name, likes) values ('Doctors Wear Photos Of Themselves Smiling To Ease Patients', 'While medical staff across the world are wearing PPE (personal, protective equipment) such as masks and overalls to keep themselves safe as they treat patients with Covid-19, some have oped to put photos of themselves smiling, along with their name, to put worried patients at ease. This emergency doctor from San Diego, California shared his photo on Instagram, writing that his patients can now see a reassuring and comforting smile', 'Martino', 5);
 
 INSERT INTO stories (title, story, name, likes) values ('Rainbow Drawings', 'If you have been out on a daily run or walk during lockdown, you may have noticed drawings of rainbows placed in the windows of homes. All over the UK, the drawings - which are intended to spread hope during this time, particularly to NHS and key workers - have been cropping up, including at this house in Bournemouth.', 'Vanessa', 4);
+
+-- USERS --
+
+INSERT INTO stories (title, story, name, likes) values ('Rainbow Drawings', 'If you have been out on a daily run or walk during lockdown, you may have noticed drawings of rainbows placed in the windows of homes. All over the UK, the drawings - which are intended to spread hope during this time, particularly to NHS and key workers - have been cropping up, including at this house in Bournemouth.', 'Vanessa', 4);

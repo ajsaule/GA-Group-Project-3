@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sinatra/json'
+require 'bcrypt'
 require_relative 'database/database_config'
 require_relative 'models/story'
 require_relative 'models/user'
@@ -42,6 +43,15 @@ post '/session' do
 
 end
 
+get '/session' do
+  if logged_in? 
+    json({ message: "logged in" }) 
+  else
+    json({ message: "NOT logged in" }) 
+  end
+
+end
+
 delete "/session" do
   session["user_id"] = nil
   json({ message: "logged out"}) 
@@ -59,6 +69,7 @@ post '/user/new' do
         user.email = json_body(request).email
         user.password_digest = BCrypt::Password.create(json_body(request).password)
         user.save
+        session["user_id"] = user.id
         status 201
         json({})
     else
@@ -84,12 +95,23 @@ delete '/user/delete' do
   json({ message: "deleted"})
 end
 
+# delete ‘/user/delete’ do
+#   id = json_body(request).id
+#   if logged_in? && (current_user[“id”] == id)
+#     user = User.find(id)
+#     user.delete
+#     session[“user_id”] = nil
+#     json({ message: “deleted”})
+#   end
+# end
+
 # ======================STORY==========================
 
 # ===CREATE===
 
 post '/api/stories' do
     story = Story.new
+    story.userid = session["user_id"]
     story.title = json_body(request).title
     story.story = json_body(request).story
     story.name = json_body(request).name
@@ -101,13 +123,25 @@ end
 
 # ===READ===
 
-get '/' do
-  redirect '/index.html'
+get '/' do 
+  redirect "/index.html"
+end
+
+get '/api/stories/story' do
+  # redirect '/index.html'
+  if logged_in? 
+    json({ id: session["user_id"] }) 
+  end
 end
 
 get '/api/stories' do
   stories = Story.all
   json data: stories 
+end
+
+get 'api/stories/edit' do 
+  story = Story.find(json_body(request).id)
+  json data: story
 end
 
 # ===DELETE===
@@ -125,7 +159,7 @@ end
 patch '/api/stories' do
   body = json_body(request)
   story = Story.find(body.id)
-  story.content = body.content
+  story.story = body.content
   story.save
   json({ message: "patch works"})
 end
