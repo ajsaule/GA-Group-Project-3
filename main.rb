@@ -5,6 +5,7 @@ require 'bcrypt'
 require_relative 'database/database_config'
 require_relative 'models/story'
 require_relative 'models/user'
+require 'pry'
 
 enable :sessions
 
@@ -139,9 +140,9 @@ get '/api/stories' do
   json data: stories 
 end
 
-get 'api/stories/edit' do 
-  story = Story.find(json_body(request).id)
-  json data: story
+get '/api/stories/edit' do 
+  story = Story.find(params["id"])
+  json(data: story)
 end
 
 # ===DELETE===
@@ -159,7 +160,9 @@ end
 patch '/api/stories' do
   body = json_body(request)
   story = Story.find(body.id)
-  story.story = body.content
+  story.story = body.story
+  story.title = body.title
+  story.name = body.name
   story.save
   json({ message: "patch works"})
 end
