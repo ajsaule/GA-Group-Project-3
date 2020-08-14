@@ -14,19 +14,19 @@ function editStory(userid) {
     .then(res => { 
     let template = `
     
-        <h2>Edit your story</h2>
+        <h2 class="story-edit-title">Edit your story</h2>
         
         <form class="edit-story" onSubmit="replaceStory(event)" action="" method="post">
 
-            <input name="title" type="text" value=${res.data.data.title}>
+            <input class="forms" name="title" type="text" value=${res.data.data.title}>
 
-            <textarea name="story" type="varchar(1000)" id="" cols="" rows="">${res.data.data.story}</textarea>
+            <textarea class="forms" name="story" type="varchar(1000)">${res.data.data.story}</textarea>
 
-            <input name="name" type="text" value=${res.data.data.name}>
+            <input class="forms" name="name" type="text" value=${res.data.data.name}>
 
-            <input type="hidden" name="id" value=${res.data.data.id}>
+            <input class="forms" type="hidden" name="id" value=${res.data.data.id}>
             
-            <button class="edit-story-btn">Edit Story</button>
+            <button class="login-btn">Edit Story</button>
 
         </form>
     
