@@ -1,8 +1,11 @@
+const resourcesBanner = document.querySelector('.banner');
 function innovation(event) {
     resetContent()
     // event target here is just the <a> tag
     let target = event.target
     target.classList.add('active')
+    resourcesBanner.style.background = `url('https://images.unsplash.com/photo-1517346665566-17b938c7f3ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')`
+    resourcesBanner.style.backgroundSize = '100%'
     // code here
     innovationReinvention()
 }

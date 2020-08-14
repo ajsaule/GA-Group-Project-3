@@ -31,22 +31,25 @@ body
 }
 .fa-home
 {
-    font-size: .7em;
+    font-size: 1em;
     top: .4em;
     left: .4em;
 }
 .signup
 {
+    font-size: 1em;
     top: .2em;
     right: .2em;
 }
 .login
 {
+    font-size: 1em;
     top: .2em;
     right: 3em;
 }
 .logout
 {
+    font-size: 1em;
     top: .2em;
     right: .2em;
 }

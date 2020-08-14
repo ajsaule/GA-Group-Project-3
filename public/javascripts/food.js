@@ -1,8 +1,12 @@
+const foodBanner = document.querySelector('.banner')
+
 function food(event) {
     resetContent()
     // event target here is just the <a> tag
     let target = event.target
     target.classList.add('active')
+    foodBanner.style.background = `url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')`
+    foodBanner.style.backgroundSize = '100%'
     // code here
     retrieveData()
 }
@@ -36,7 +40,6 @@ function retrieveData() {
         var recipeDisplay = []
         var recipes = ''
         var foodResults = response.data.results
-        console.log(foodResults)
         let foodDiv = document.createElement('div')
         foodDiv.classList.add('foodDiv')
         content.appendChild(randomDiv)
