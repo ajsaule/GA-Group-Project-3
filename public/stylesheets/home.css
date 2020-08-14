@@ -1,15 +1,23 @@
 #content {
     margin: 0 auto;
 }
-
-.counterStatement{
-    text-align: center;
+html {
+    height: 100vh;
 }
-
-
-.counter{
-    font-weight: bold;
-    color: green;
-    text-align: center;
-    margin-top: 1rem;
+footer {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 50px;
+    gap: 50px;
+    background-color: grey;
+    height: 40px;
+    width: 100%;
+}
+.made-with-love {
+    font-family: 'Roboto', sans-serif;
+}
+.about-us {
+    
 }

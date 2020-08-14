@@ -44,9 +44,9 @@ function displayUpdateStoryButton(userid) {
   // }
 }
 
-function displayDeleteStoryButton(userid) {
+function displayDeleteStoryButton(id) {
     let template = `
-      <button onClick="deleteStory(event, ${userid})"> Delete your story </button>
+      <button onClick="deleteStory(event, ${id})"> Delete your story </button>
     `
     let deleteStoryButton = document.createElement('div')
     deleteStoryButton.classList.add('delete-story-btn')
@@ -83,7 +83,7 @@ function createStory(story) {
   axios
     .get('/api/stories/story')
     .then(res => {
-      if (story.userid === res.data.id ) {
+      if (story.userid === res.data.id) {
         newArticle.appendChild(displayUpdateStoryButton(story.id))
         newArticle.appendChild(displayDeleteStoryButton(story.id))
     }
