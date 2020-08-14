@@ -6,7 +6,7 @@ const homeTab = document.getElementById('home');
 const signUp = document.querySelector('.signup');
 const login = document.querySelector('.login');
 const logout = document.querySelector('.logout');
-const aboutUs = document.querySelector('.about-us')
+const aboutBtn = document.querySelector('.about');
 
 // ===EVENT HANDLERS===
 storiesTab.addEventListener('click', stories);
@@ -15,4 +15,5 @@ foodTab.addEventListener('click', food);
 homeTab.addEventListener('click', home);
 signUp.addEventListener('click', newUsers);
 login.addEventListener('click', logIn);
-logout.addEventListener('click', logOut)
+logout.addEventListener('click', logOut);
+aboutBtn.addEventListener('click', about);
