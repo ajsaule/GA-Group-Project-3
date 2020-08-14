@@ -1,19 +1,15 @@
-const storiesContainer = document.querySelector('#content')
-// we don't have inputs yet
-// const newStoryTitle = document.querySelector('.new-story-title')
-// const newStoryInput = document.querySelector('.new-story-input')
-// const newStoryName = document.querySelector('.new-story-name')
-// const newStoryLikes = document.querySelector('.new-story-likes')
-
+const storiesContainer = document.querySelector('#content');
+const storiesBanner = document.querySelector('.banner');
 
 function stories(event) {
     resetContent()
     let target = event.target
     target.classList.add('active')
+    storiesBanner.style.background = `url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1532774821765-7403258cb2fa%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1050%26q%3D80')`
+    storiesBanner.style.backgroundSize = '100%'
     displayNewStoryButton()
     fetchStories()
-
-} 
+}
 
 function displayNewStoryButton() {
   axios

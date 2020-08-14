@@ -29,6 +29,6 @@ INSERT INTO stories (title, story, name, likes, userid) values ('Doctors Wear Ph
 
 INSERT INTO stories (title, story, name, likes, userid) values ('Rainbow Drawings', 'If you have been out on a daily run or walk during lockdown, you may have noticed drawings of rainbows placed in the windows of homes. All over the UK, the drawings - which are intended to spread hope during this time, particularly to NHS and key workers - have been cropping up, including at this house in Bournemouth.', 'Vanessa', 4, 3);
 
--- USERS --
-
 INSERT INTO stories (title, story, name, likes, userid) values ('Rainbow Drawings', 'If you have been out on a daily run or walk during lockdown, you may have noticed drawings of rainbows placed in the windows of homes. All over the UK, the drawings - which are intended to spread hope during this time, particularly to NHS and key workers - have been cropping up, including at this house in Bournemouth.', 'Vanessa', 4, 3);
+
+-- USERS --
