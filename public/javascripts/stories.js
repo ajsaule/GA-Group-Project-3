@@ -34,24 +34,21 @@ function displayNewStoryButton() {
 
 function displayUpdateStoryButton(userid) {
     let template = `
-      <button onClick="updateStory(event, ${userid})"> Update your story </button>
+      <button class='update-story-btn' onClick="updateStory(event, ${userid})"> Update your story </button>
     `
-    let updateStoryButton = document.createElement('div')
-    updateStoryButton.classList.add('update-story-btn')
+    let updateStoryButton = document.createElement('p')
     updateStoryButton.innerHTML = template
-    // updateStoryButton.addEventListener('click', updateStory(event))
     return updateStoryButton
   // }
 }
 
+
 function displayDeleteStoryButton(id) {
     let template = `
-      <button onClick="deleteStory(event, ${id})"> Delete your story </button>
+      <button class='delete-story-btn' onClick="deleteStory(event, ${id})"> Delete your story </button>
     `
-    let deleteStoryButton = document.createElement('div')
-    deleteStoryButton.classList.add('delete-story-btn')
+    let deleteStoryButton = document.createElement('p')
     deleteStoryButton.innerHTML = template 
-    // deleteStoryButton.addEventListener('click', deleteStory(e))
     return deleteStoryButton
   // }
 }
@@ -83,14 +80,16 @@ function createStory(story) {
   axios
     .get('/api/stories/story')
     .then(res => {
-      if (story.userid === res.data.id) {
-        newArticle.appendChild(displayUpdateStoryButton(story.id))
-        newArticle.appendChild(displayDeleteStoryButton(story.id))
-    }
+        if (story.userid === res.data.id ) {
+            let editBtnsDiv = document.createElement('div')
+            editBtnsDiv.classList.add('edit-btn-div')
+            editBtnsDiv.appendChild(displayUpdateStoryButton(story.id))
+            editBtnsDiv.appendChild(displayDeleteStoryButton(story.id))
+            newArticle.appendChild(editBtnsDiv)
+        }
   })
   return newArticle
 }
-
 
 function renderStories(res) {
   let stories = res.data.data
@@ -103,10 +102,3 @@ function fetchStories() {
   const url = '/api/stories'
   axios.get(url).then(renderStories)
 }
-
-// storiesContainer.addEventListener('click', deleteStory)
-
-// axios
-//     .post('/api/stories', { title: newStoryTitle.value, story: newStoryInput.value, name: newStoryName.value })
-//     .then(res => {
-//       todoList.appendChild(createStory(res.data))
