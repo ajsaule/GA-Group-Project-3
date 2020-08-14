@@ -6,6 +6,7 @@ const homeTab = document.getElementById('home');
 const signUp = document.querySelector('.signup');
 const login = document.querySelector('.login');
 const logout = document.querySelector('.logout');
+const aboutUs = document.querySelector('.about-us')
 
 // ===EVENT HANDLERS===
 storiesTab.addEventListener('click', stories);
