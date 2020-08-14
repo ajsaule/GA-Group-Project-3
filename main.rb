@@ -138,9 +138,7 @@ post '/api/stories' do
     end
 
     response_parsed = JSON.parse(response.body)
-    #p JSON::pretty_generate (JSON (response.body))
-    
-    binding.pry
+
     if response_parsed["documents"][0]["confidenceScores"]["positive"] > 0.5
       story = Story.new
       story.userid = session["user_id"]
