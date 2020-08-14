@@ -5,7 +5,7 @@
 .food-tile {
     padding: 1em 3em;
     margin: 15px auto;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgb(249, 249, 249);
     /* background: linear-gradient(50deg,#ff2db6, #fbf027); */
     border-radius: 1px;
     box-shadow: 9px 12px 46px -20px rgba(0,0,0,0.83);
@@ -42,7 +42,7 @@
 }
 .random-recipe-button button {
     /* background-color: #fef8fc; */
-    background-color: rgba(0, 0, 0, 0.635);
+    background-color: rgba(0, 0, 0, 0.929);
     border-radius: 1px;
     color: white;
     border: none;
