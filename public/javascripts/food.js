@@ -28,7 +28,7 @@ function retrieveData() {
         "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"tasty.p.rapidapi.com",
-            "x-rapidapi-key":"f4b5d309dbmshfc13cb7f654eb23p181331jsn4e6745a2178c",
+            "x-rapidapi-key":"0490ca2e73msh639e1174f49c449p143af8jsn607130969f1f",
             "useQueryString":true
         },"params":{
             "tags":"comfort_food",
