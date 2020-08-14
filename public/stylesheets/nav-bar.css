@@ -31,25 +31,35 @@ body
 }
 .fa-home
 {
-    font-size: .7em;
+    font-size: 1em;
     top: .4em;
     left: .4em;
 }
 .signup
 {
+    font-size: 1em;
     top: .2em;
     right: .2em;
 }
 .login
 {
+    font-size: 1em;
     top: .2em;
     right: 3em;
 }
 .logout
 {
+    font-size: 1em;
     top: .2em;
     right: .2em;
 }
+.about
+{
+    font-size: 1em;
+    top: .4em;
+    left: 2em;
+}
+
 .banner
 {
     background-image: url("https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80");
@@ -158,5 +168,17 @@ a
     .nav-button 
     {
         padding: 15px 0px;
+    }
+    .about-text
+    {
+        font-size: .3em;
+    }
+    .about-text-right
+    {
+        font-size: .3em;
+    }
+    .about-text-center
+    {
+        font-size: .3em;
     }
 }

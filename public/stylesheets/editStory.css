@@ -1,4 +1,16 @@
-.edit-story-btn 
+.edit-btn-div
 {
-    
+    display: flex;
+    margin: 0 2em;
+}
+.update-story-btn
+{
+    font-size: 1em;
+    padding: .2em;
+}
+.delete-story-btn
+{
+    font-size: 1em;
+    padding: .2em;
+    margin-left: 1rem;
 }

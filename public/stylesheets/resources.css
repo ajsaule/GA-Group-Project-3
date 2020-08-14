@@ -5,7 +5,7 @@
 .in-tile {
     padding: 15px;
     margin: 15px auto;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgb(249, 249, 249);
     /* background: linear-gradient(50deg,#ff2db6, #fbf027); */
     border-radius: 1px;
     width: 95%;
