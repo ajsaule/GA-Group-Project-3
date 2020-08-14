@@ -1,0 +1,18 @@
+.about-text
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: .6em;
+    text-align: justify;
+}
+.about-text-right
+{
+    font-family: 'Roboto', sans-serif;
+    float: right;
+    font-size: .6em;
+}
+.about-text-center
+{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: .6em;
+}
