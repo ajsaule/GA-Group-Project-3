@@ -42,6 +42,7 @@ function addStory(e) {
     axios
         .post('/api/stories', formDataObj )
         .then(res => { 
+            console.log(res.data.message)
             form.querySelectorAll('input, textarea').forEach(tag => tag.value = '')
             storiesTab.click() 
         })
