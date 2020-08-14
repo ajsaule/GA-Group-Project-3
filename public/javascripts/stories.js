@@ -43,9 +43,9 @@ function displayUpdateStoryButton(userid) {
 }
 
 
-function displayDeleteStoryButton(userid) {
+function displayDeleteStoryButton(id) {
     let template = `
-      <button class='delete-story-btn' onClick="deleteStory(event, ${userid})"> Delete your story </button>
+      <button class='delete-story-btn' onClick="deleteStory(event, ${id})"> Delete your story </button>
     `
     let deleteStoryButton = document.createElement('p')
     deleteStoryButton.innerHTML = template 
