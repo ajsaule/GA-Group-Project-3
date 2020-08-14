@@ -1,6 +1,16 @@
 #content {
     margin: 0 auto;
 }
+.counterStatement{
+    text-align: center;
+}
+.counter {
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 html {
     height: 100vh;
 }
