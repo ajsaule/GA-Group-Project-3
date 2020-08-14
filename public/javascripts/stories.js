@@ -83,7 +83,7 @@ function createStory(story) {
   axios
     .get('/api/stories/story')
     .then(res => {
-      if (story.userid === res.data.id ) {
+      if (story.userid === res.data.id) {
         newArticle.appendChild(displayUpdateStoryButton(story.id))
         newArticle.appendChild(displayDeleteStoryButton(story.id))
     }

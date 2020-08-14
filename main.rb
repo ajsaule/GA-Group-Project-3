@@ -2,10 +2,15 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sinatra/json'
 require 'bcrypt'
+require 'net/http'
+require 'uri'
+require 'json'
+require 'pry'
 require_relative 'database/database_config'
 require_relative 'models/story'
 require_relative 'models/user'
 require 'pry'
+
 
 enable :sessions
 
@@ -110,16 +115,46 @@ end
 
 # ===CREATE===
 
+
 post '/api/stories' do
-    story = Story.new
-    story.userid = session["user_id"]
-    story.title = json_body(request).title
-    story.story = json_body(request).story
-    story.name = json_body(request).name
-    story.likes = 0
-    story.save
-    status 201
-    json(story)
+    subscription_key = ENV["MSFT_TEXT_ANALYSIS_API"]
+    endpoint = "https://andrej.cognitiveservices.azure.com"
+    path = '/text/analytics/v3.0/sentiment'
+    uri = URI(endpoint + path)
+
+    documents = { 'documents': [
+        { 'id' => '1', 'text' => "#{json_body(request).story}" },
+    ]}
+
+    p 'Please wait a moment for the results to appear.'
+
+    api_request = Net::HTTP::Post.new(uri)
+    api_request['Content-Type'] = "application/json"
+    api_request['Ocp-Apim-Subscription-Key'] = subscription_key
+    api_request.body = documents.to_json
+
+    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+        http.request (api_request)
+    end
+
+    response_parsed = JSON.parse(response.body)
+    #p JSON::pretty_generate (JSON (response.body))
+    
+    binding.pry
+    if response_parsed["documents"][0]["confidenceScores"]["positive"] > 0.5
+      story = Story.new
+      story.userid = session["user_id"]
+      story.title = json_body(request).title
+      story.story = json_body(request).story
+      story.name = json_body(request).name
+      story.likes = 0
+      story.save
+      status 201
+      # json(story)
+      json({ message: "AI thinks your story is cool"})
+     else 
+      json({ message: "AI thinks your story is negative :) "})
+    end
 end  
 
 # ===READ===
