@@ -1,6 +1,6 @@
 # The Happy Path - COVID Support App
 
-[Try it out here](https://heroku.com)
+[Check the app out here](https://floating-cliffs-04957.herokuapp.com/)
 
 ![Final app home page](images/final_product_1.png)
 
