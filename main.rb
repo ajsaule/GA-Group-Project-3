@@ -55,7 +55,6 @@ get '/session' do
   else
     json({ message: "NOT logged in" }) 
   end
-
 end
 
 delete "/session" do
@@ -126,7 +125,7 @@ post '/api/stories' do
         { 'id' => '1', 'text' => "#{json_body(request).story}" },
     ]}
 
-    p 'Please wait a moment for the results to appear.'
+    p 'Results from your query are incoming.'
 
     api_request = Net::HTTP::Post.new(uri)
     api_request['Content-Type'] = "application/json"
@@ -149,9 +148,18 @@ post '/api/stories' do
       story.save
       status 201
       # json(story)
-      json({ message: "AI thinks your story is cool"})
+      json({ message: "AI has analysed your story and sends you some hope and positivity"})
      else 
-      json({ message: "AI thinks your story is negative :) "})
+      story = Story.new
+      story.userid = session["user_id"]
+      story.title = json_body(request).title
+      story.story = json_body(request).story
+      story.name = json_body(request).name
+      story.likes = 0
+      story.save
+      status 201
+      # json(story)
+      json({ message: "AI has analysed your story and thinks you could do with some more positivity, heres a Hibiscus flower 🌺"})
     end
 end  
 
@@ -174,8 +182,8 @@ get '/api/stories' do
 end
 
 get '/api/stories/edit' do 
-  story = Story.find(params["id"])
-  json(data: story)
+    story = Story.find(params["id"])
+    json(data: story)
 end
 
 # ===DELETE===
@@ -191,13 +199,47 @@ end
 # ===UPDATE===
 
 patch '/api/stories' do
-  body = json_body(request)
-  story = Story.find(body.id)
-  story.story = body.story
-  story.title = body.title
-  story.name = body.name
-  story.save
-  json({ message: "patch works"})
+  story_body = json_body(request)
+
+  subscription_key = ENV["MSFT_TEXT_ANALYSIS_API"]
+  endpoint = "https://andrej.cognitiveservices.azure.com"
+  path = '/text/analytics/v3.0/sentiment'
+  uri = URI(endpoint + path)
+
+  documents = { 'documents': [
+      { 'id' => '1', 'text' => "#{story_body.story}" },
+  ]}
+
+  p 'Results from your query are incoming.'
+
+  api_request = Net::HTTP::Post.new(uri)
+  api_request['Content-Type'] = "application/json"
+  api_request['Ocp-Apim-Subscription-Key'] = subscription_key
+  api_request.body = documents.to_json
+
+  response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+      http.request (api_request)
+  end
+
+  response_parsed = JSON.parse(response.body)
+
+  if response_parsed["documents"][0]["confidenceScores"]["positive"] > 0.5
+    body = json_body(request)
+    story = Story.find(body.id)
+    story.story = body.story
+    story.title = body.title
+    story.name = body.name
+    story.save
+    json({ message: "AI has analysed your story and sends you some hope and positivity"})
+  else 
+    body = json_body(request)
+    story = Story.find(body.id)
+    story.story = body.story
+    story.title = body.title
+    story.name = body.name
+    story.save
+    json({ message: "AI has analysed your story and thinks you could do with some more positivity, heres a Hibiscus flower 🌺"})
+  end
 end
 
 

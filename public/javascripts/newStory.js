@@ -34,6 +34,8 @@ function createNewStory() {
 
 }
 
+var responseData = ''
+
 function addStory(e) {
     e.preventDefault()
     var form = e.target
@@ -42,8 +44,12 @@ function addStory(e) {
     axios
         .post('/api/stories', formDataObj )
         .then(res => { 
-            console.log(res.data.message)
             form.querySelectorAll('input, textarea').forEach(tag => tag.value = '')
             storiesTab.click() 
+            // creating some html on the page as response from Microsoft Text Analysis AI
+            let aiRes = document.createElement('div')
+            aiRes.classList.add('ai-response')
+            aiRes.innerHTML = `${res.data.message}`
+            newStoryContainer.appendChild(aiRes)
         })
 }
