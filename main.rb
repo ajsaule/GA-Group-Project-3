@@ -5,11 +5,10 @@ require 'bcrypt'
 require 'net/http'
 require 'uri'
 require 'json'
-require 'pry'
 require_relative 'database/database_config'
 require_relative 'models/story'
 require_relative 'models/user'
-require 'pry'
+
 
 
 enable :sessions
