@@ -47,6 +47,11 @@ function replaceStory(e) {
         .then(res => { 
             form.querySelectorAll('input, textarea').forEach(tag => tag.value = '')
             storiesTab.click() 
+            // creating the Microsft AI response on screen 
+            let aiRes = document.createElement('div')
+            aiRes.classList.add('ai-response')
+            aiRes.innerHTML = `${res.data.message}`
+            newStoryContainer.appendChild(aiRes)
         })
 }
   

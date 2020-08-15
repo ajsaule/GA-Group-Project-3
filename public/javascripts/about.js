@@ -16,8 +16,27 @@ function aboutUs() {
         <p class="about-text">Now more than ever we are finding ways to stay connected to our loved ones through social media, we use food to bring our families and friends together (virtually, of course!), we are upskilling and finding new ways to be resourceful and we are sharing stories about our positive experiences during this time.</p>
         <p class="about-text">We created a platform to share our stories, recipes that bring us comfort and resources for wellness and support.</p>
         <p class="about-text">We would love for you to join us and share your story.
-        Welcome to The Happy Path!</p>
+        Welcome to The Happy Path! 😃</p>
         <p class="about-text-right">#positivevibesonly</p>
+        <h4> The names that never made it </h4>
+        <p class="about-text-center">
+            <ul>
+                <li>covid++</li>
+                <li>Pandemic! At The Disco </li>
+                <li>We get locked down, but we get up again! </li>
+                <li>Covid positive </li>
+                <li>COVID++ </li>
+                <li>Powered by Positive Vibes </li>
+                <li>Clean hands, positive vibes </li>
+                <li>COVID.pop( )  </li>
+                <li>posipost </li>
+                <li>wall of positivity </li>
+                <li>COVID.cheerful( ) </li>
+                <li>COVID.pop("Positives") </li>
+                <li>LovingLockdown </li>
+                <li>Australians guide to the pandemic</li>
+            </ul>
+        </p>
         <p class="about-text-center">Made with ❤️ by sei-24 (aka. codeRona)</p>
     </div>    
     
