@@ -38,6 +38,5 @@ Some of the important features that we wanted to include were the ability for us
 ![Whimsical Planning Board v2](images/whimsical_2.png)
 ![Whimsical Planning Board v3](images/whimsical_3.png)
 
-## Final product screenshots
 
 
