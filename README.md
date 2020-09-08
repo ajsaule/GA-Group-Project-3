@@ -32,9 +32,9 @@ Some of the important features that we wanted to include were the ability for us
 
 #### Screenshots of planning process
 
+![Whimsical Planning Board v4](images/whimsical_4.png)
 ![Trello Board v1](images/trello_screenshot_1.png)
 ![Trello Board v2](images/trello_screenshot_2.png)
-![Whimsical Planning Board v4](images/whimsical_4.png)
 ![Whimsical Planning Board v1](images/whimsical_1.png)
 ![Whimsical Planning Board v2](images/whimsical_2.png)
 ![Whimsical Planning Board v3](images/whimsical_3.png)
